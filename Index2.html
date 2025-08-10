@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"/>
@@ -62,6 +63,9 @@ details{scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top) + 14px
 ul.timeline{list-style:none; padding:0; margin:8px 0;}
 ul.timeline li{padding:8px 10px; border-left:2px dashed var(--border); margin-left:6px; position:relative;}
 ul.timeline li::before{content:''; position:absolute; left:-6px; top:14px; width:10px; height:10px; background:var(--accent); border-radius:50%;}
+/* Custom style for map links in timeline */
+ul.timeline a{text-decoration:none; color:var(--accent); font-weight:700;}
+ul.timeline a:hover{text-decoration:underline;}
 
 .fig{display:grid; grid-template-columns:1fr; gap:10px;}
 @media(min-width:680px){ .fig{grid-template-columns:1fr 1fr;}}
@@ -105,18 +109,18 @@ a, button, summary{min-height:34px}
 <section class="card" id="d1">
 <div class="section-title"><span class="day">Day 1（8/21）</span><h2>那霸抵達 → 國際通入住</h2></div>
 <div class="hero">
-<img alt="Naha Airport Arrival Hall" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Naha_Airport_new_international_terminal_20140220_001.jpg/1280px-Naha_Airport_new_international_terminal_20140220_001.jpg" style="width:100%;display:block"/>
+<img alt="Naha Airport Arrival Hall" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Naha_Airport_Domestic_Terminal_2F_departure_lobby_20220701.jpg/1280px-Naha_Airport_Domestic_Terminal_2F_departure_lobby_20220701.jpg" style="width:100%;display:block"/>
 </div>
-<div class="caption">Photo: W. T. Poly / Wikimedia Commons（CC BY-SA 3.0）</div>
+<div class="caption">Photo: W. T. Poly / Wikimedia Commons (CC BY-SA 3.0)</div>
 <details open="">
 <summary>展開／收起</summary>
 <h3>時間軸 Timeline</h3>
 <ul class="timeline">
-<li><strong>14:30</strong> 抵達那覇空港 ✈️ → 乘 <strong>Yui Rail</strong>（機場站→牧志/美榮橋/縣廳前，約 <strong>20–25 分</strong>，班距 4–8 分）</li>
+<li><strong>14:30</strong> 抵達 <a href="https://www.google.com/maps/search/?api=1&query=Naha+Airport" target="_blank" rel="noopener"><strong>那覇空港</strong></a> ✈️ → 乘 <strong>Yui Rail</strong>（機場站→牧志/美榮橋/縣廳前，約 <strong>20–25 分</strong>，班距 4–8 分）</li>
 <li><strong>15:30</strong> 酒店 Check-in（國際通一帶步行 5–10 分）</li>
-<li><strong>16:30–18:00</strong> <strong>波上宮</strong>＋<strong>波之上海灘</strong> 散步看海（各 10–15 分步行距離；建議停留 60–90 分）</li>
-<li><strong>18:30–20:00</strong> <strong>國際通</strong> & <strong>牧志公設市場</strong> 周邊逛街</li>
-<li><strong>20:00–21:00</strong> 晚餐 & 小食巡禮（屋台村／市場周邊）</li>
+<li><strong>16:30–18:00</strong> <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE" target="_blank" rel="noopener"><strong>波上宮</strong></a>＋<a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B9%8B%E4%B8%8A%E6%B5%B7%E7%81%98" target="_blank" rel="noopener"><strong>波之上海灘</strong></a> 散步看海（各 10–15 分步行距離；建議停留 60–90 分）</li>
+<li><strong>18:30–20:00</strong> <a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B9%A9%E5%9C%8B%E9%9A%9B%E9%80%9A" target="_blank" rel="noopener"><strong>國際通</strong></a> & <a href="https://www.google.com/maps/search/?api=1&query=%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener"><strong>牧志公設市場</strong></a> 周邊逛街</li>
+<li><strong>20:00–21:00</strong> 晚餐 & 小食巡禮（<a href="https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E9%9A%9B%E9%80%9A%E5%B1%8B%E5%8F%B0%E6%9D%91" target="_blank" rel="noopener"><strong>屋台村</strong></a>／市場周邊）</li>
 </ul>
 <div class="fig">
 <div>
@@ -127,16 +131,16 @@ a, button, summary{min-height:34px}
 <li><b>逗留：</b>1–1.5 小時（連海灘）</li>
 <li><b>貼士：</b>海邊風大，帶薄外套；海灘沖洗設備有限。</li>
 </ul>
-<a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=波上宮" rel="noopener" target="_blank">
+<a class="gmaps" href="https://maps.app.goo.gl/?q=%E6%B3%A2%E4%B8%8A%E5%AE%AE" rel="noopener" target="_blank">
 <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 查看地圖
           </a>
            
-          <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=波之上海灘" rel="noopener" target="_blank">
+          <a class="gmaps" href="https://maps.app.goo.gl/?q=%E6%B3%A2%E4%B9%8B%E4%B8%8A%E6%B5%B7%E6%BF%B1" rel="noopener" target="_blank">
 <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 波之上海灘 地圖
           </a>
 </div>
 <div>
-<img alt="Naminoue Shrine and Beach" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/111204_Naminoue_Beach_and_Naminoue-gu_Naha_Okinawa_pref_Japan01bs.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<img alt="Naminoue Beach & Naminoue-gu" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/111204_Naminoue_Beach_and_Naminoue-gu_Naha_Okinawa_pref_Japan01bs.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
 <div class="caption">Photo: 663highland / Wikimedia Commons（CC BY 2.5）</div>
 </div>
 </div>
@@ -145,7 +149,7 @@ a, button, summary{min-height:34px}
 <h3>街頭美食／餐廳推薦（步行可達）</h3>
 <ul>
 <li><strong>牧志公設市場</strong>：海鮮丼、苦瓜炒豆腐、炸天婦羅等沖繩家常味道。參考價位 ¥600–¥1,500。
-          <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=第一牧志公設市場" rel="noopener" target="_blank">
+          <a class="gmaps" href="https://maps.app.goo.gl/?q=%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4" rel="noopener" target="_blank">
 <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 市場 地圖
           </a>
 </li>
@@ -177,9 +181,9 @@ a, button, summary{min-height:34px}
 <section class="card" id="d2">
 <div class="section-title"><span class="day">Day 2（8/22）</span><h2>青之洞窟浮潛 → 北谷美國村入住</h2></div>
 <div class="hero">
-<img alt="Blue Cave Snorkeling" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Blue_Cave_snorkeling_at_Cape_Maeda_in_Okinawa_01.jpg/1280px-Blue_Cave_snorkeling_at_Cape_Maeda_in_Okinawa_01.jpg" style="width:100%;display:block"/>
+<img alt="Cape Maeda (access to Blue Cave)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Cape_Maeda_at_Okinawa.jpg" style="width:100%;display:block"/>
 </div>
-<div class="caption">Photo: Kento Iemoto / Wikimedia Commons（CC BY-SA 4.0）</div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 3.0）</div>
 <details open="">
 <summary>展開／收起</summary>
 <h3>時間軸 Timeline</h3>
@@ -199,13 +203,13 @@ a, button, summary{min-height:34px}
 <li><b>安全：</b>遵從教練；穿礁石鞋；活動後 <strong>24 小時內避免搭機</strong>。</li>
 <li><b>裝備：</b>面鏡、呼吸管、救生衣由團方提供；自帶毛巾。</li>
 </ul>
-<a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=真榮田岬" rel="noopener" target="_blank">
+<a class="gmaps" href="https://maps.app.goo.gl/?q=%E7%9C%9F%E6%A6%AE%E7%94%B0%E5%B2%AC%20%E9%9D%92%E4%B9%8B%E6%B4%9E%E7%AA%9F" rel="noopener" target="_blank">
 <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 集合點 地圖
           </a>
 </div>
 <div>
-<img alt="Mihama Town Resort American Village at sunset" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Mihama_American_Village_at_sunset.jpg/1280px-Mihama_American_Village_at_sunset.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
-<div class="caption">Photo: Clavis David / Wikimedia Commons（CC BY-SA 4.0）</div>
+<img alt="Mihama Town Resort American Village" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Mihama_Town_Resort_American_Village_3.JPG" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption">Photo: Abasaa / Wikimedia Commons（CC BY-SA 3.0）</div>
 </div>
 </div>
 <div class="hero"><img alt="Chatan Sunset Beach" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Chatan_Sunset_Beach_%28south%29_20150317-1.JPG" style="width:100%;display:block"/></div>
@@ -246,10 +250,10 @@ a, button, summary{min-height:34px}
 <li><strong>18:00</strong> 回到那覇／美國村解散</li>
 </ul>
 </details>
-<div class="hero"><img alt="Okinawa Churaumi Aquarium - Kuroshio Sea Tank" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Okinawa_Churaumi_Aquarium_-_Kuroshio_Sea_01.jpg/1280px-Okinawa_Churaumi_Aquarium_-_Kuroshio_Sea_01.jpg" style="width:100%;display:block"/></div>
-<div class="caption">Photo: Jordy Meow / Wikimedia Commons（CC BY-SA 3.0）</div>
-<div class="hero"><img alt="Kouri Bridge from Kouri Island" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Kouri_Bridge_from_Kouri_Island_01.jpg/1280px-Kouri_Bridge_from_Kouri_Island_01.jpg" style="width:100%;display:block"/></div>
-<div class="caption">Photo: Ippei-janine / Wikimedia Commons（CC BY-SA 3.0）</div>
+<div class="hero"><img alt="Okinawa Churaumi Aquarium entrance" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Okinawa_Churaumi_Aquarium_main_hall_entrance_20191109.jpg" style="width:100%;display:block"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+<div class="hero"><img alt="Kouri Bridge" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Nago_Okinawa_Kouri-Bridge-02.jpg" style="width:100%;display:block"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
 <h3>路線指示 / 地圖</h3>
 <div class="hero">
 <svg style="width:100%;display:block" viewbox="0 0 900 160">
@@ -268,9 +272,9 @@ a, button, summary{min-height:34px}
 <section class="card" id="d4">
 <div class="section-title"><span class="day">Day 4（8/24）</span><h2>首里城 → 玉泉洞（Okinawa World）→ 瀨長島</h2></div>
 <div class="hero">
-<img alt="Shuri Castle Main Hall" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shuri-jo_01.jpg/1280px-Shuri-jo_01.jpg" style="width:100%;display:block"/>
+<img alt="Shuri Castle" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Naha_Okinawa_Japan_Shuri-Castle-01.jpg" style="width:100%;display:block"/>
 </div>
-<div class="caption">Photo: STA3816 / Wikimedia Commons（CC BY-SA 3.0）</div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 3.0）</div>
 <details open="">
 <summary>展開／收起</summary>
 <h3>時間軸 Timeline</h3>
@@ -294,8 +298,8 @@ a, button, summary{min-height:34px}
 </div>
 </div>
 </details>
-<div class="hero"><img alt="Gyokusendo Cave (Okinawa World)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gyokusendo_cave_in_Okinawa_World_20160724.jpg/1280px-Gyokusendo_cave_in_Okinawa_World_20160724.jpg" style="width:100%;display:block"/></div>
-<div class="caption">Photo: Jakub Hałun / Wikimedia Commons（CC BY-SA 4.0）</div>
+<div class="hero"><img alt="Gyokusendo Cave (Okinawa World)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Gyokusendo_cave_in_Okinawa_World_20160724.jpg" style="width:100%;display:block"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
 <h3>路線指示 / 地圖</h3>
 <div class="hero">
 <svg style="width:100%;display:block" viewbox="0 0 900 160">
