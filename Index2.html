@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>沖繩五日四夜｜無自駕互動指南（8/21–25）v2</title>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🏝️%3C/text%3E%3C/svg%3E" rel="icon"/>
+<style>
+:root{
+  --bg: #0f172a;           /* slate-900 */
+  --bg-soft:#111827;       /* gray-900 */
+  --card:#0b1220;
+  --text:#e5eef9;
+  --muted:#bcd2e8;
+  --accent:#3b82f6;        /* blue-500 */
+  --accent-2:#60a5fa;
+  --border:rgba(255,255,255,.14);
+  --headerH: 64px;
+  --shadow: 0 6px 24px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f8fafc;          /* slate-50 */
+    --bg-soft:#ffffff;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#334155;
+    --accent:#2563eb;
+    --accent-2:#1d4ed8;
+    --border:rgba(0,0,0,.12);
+    --shadow: 0 8px 24px rgba(15,23,42,.08);
+  }
+}
+/* user toggle overrides */
+:root[data-theme='dark']{
+  --bg:#0f172a;--bg-soft:#111827;--card:#0b1220;--text:#e5eef9;--muted:#bcd2e8;--accent:#3b82f6;--accent-2:#60a5fa;--border:rgba(255,255,255,.14);--shadow:0 6px 24px rgba(0,0,0,.25);
+}
+:root[data-theme='light']{
+  --bg:#f8fafc;--bg-soft:#ffffff;--card:#ffffff;--text:#0f172a;--muted:#334155;--accent:#2563eb;--accent-2:#1d4ed8;--border:rgba(0,0,0,.12);--shadow:0 8px 24px rgba(15,23,42,.08);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth; scroll-padding-top: calc(var(--headerH) + env(safe-area-inset-top) + 12px);}
+body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'PingFang TC','Noto Sans TC',Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
+
+header{
+  position:sticky; top:0; z-index:1000;
+  background:linear-gradient(180deg, rgba(2,6,23,.92), rgba(2,6,23,.75));
+  backdrop-filter:saturate(160%) blur(8px);
+  border-bottom:1px solid var(--border);
+  padding: calc(8px + env(safe-area-inset-top)) 14px 8px 14px;
+}
+.headline{display:flex; align-items:center; gap:10px; justify-content:space-between}
+.h-title{font-size:18px; font-weight:800; margin:0}
+.theme{display:flex; gap:8px; align-items:center}
+.theme button{
+  border:1px solid var(--border);
+  background:var(--bg-soft);
+  color:var(--text);
+  border-radius:10px; padding:8px 10px;
+}
+
+nav{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+nav button{
+  padding:8px 10px;border-radius:8px;background:var(--bg-soft);
+  color:var(--text); border:1px solid var(--border);
+}
+nav button.active{outline:2px solid var(--accent);}
+
+.container{max-width:980px;margin:16px auto;padding:0 14px}
+.kv{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(99,102,241,.14);border:1px solid var(--border);margin-right:6px;margin-bottom:6px;font-size:12px;color:var(--text)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:14px 0;box-shadow:var(--shadow)}
+.card h2{margin:0 0 10px 0;font-size:17px}
+.section-title{display:flex; align-items:center; gap:8px}
+.section-title .day{font-weight:900; color:var(--accent)}
+
+details summary{cursor:pointer;font-weight:700;color:var(--text)}
+details{scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top) + 14px);}
+
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.btn{padding:8px 10px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;border:0}
+.btn.secondary{background:var(--bg-soft);color:var(--text);border:1px solid var(--border)}
+
+.alert{border-left:4px solid #fbbf24;background:rgba(251,191,36,.08);padding:10px;border-radius:8px}
+
+footer{opacity:.75;padding:26px 14px;text-align:center}
+
+small,.note{color:var(--muted)}
+
+/* friendly tap targets */
+a, button, summary{min-height:34px}
+</style>
+</head>
+<body>
+<header id="topbar">
+<div class="headline">
+<h1 class="h-title">🏝️ 沖繩五日四夜｜無自駕互動指南（8/21–25）</h1>
+<div class="theme">
+<button aria-label="切換淺色" id="lightBtn">☀️</button>
+<button aria-label="切換深色" id="darkBtn">🌙</button>
+</div>
+</div>
+<nav aria-label="快速切換">
+<button data-target="d1">Day1 國際通</button>
+<button data-target="d2">Day2 青之洞窟＋美國村</button>
+<button data-target="d3">Day3 北部一日遊</button>
+<button data-target="d4">Day4 首里城＋南部</button>
+<button data-target="d5">Day5 返程</button>
+<button data-target="tips">注意事項</button>
+<button id="expandAll">全部展開</button>
+<button id="collapseAll">全部收合</button>
+</nav>
+</header>
+<div class="container">
+<div class="kv">
+<span class="tag">不自駕</span>
+<span class="tag">公共交通＋一日巴士</span>
+<span class="tag">8/21–8/25</span>
+<span class="tag">浮潛安排於 Day2（距離返程 ＞ 48h）</span>
+<p class="note">提示：按上方按鈕切換各日；本頁會自動避開頂部欄位，不會遮住標題。</p>
+</div>
+<section class="card" id="d1">
+<div class="section-title"><span class="day">Day 1（8/21）</span><h2>那霸抵達 → <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9C%8B%E9%9A%9B%E9%80%9A" rel="noopener" target="_blank">國際通</a>入住</h2></div>
+<details open="">
+<summary>展開／收起</summary>
+<ul>
+<li><b>機場 → 市區：</b>搭 <b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=Yui%20Rail" rel="noopener" target="_blank">Yui Rail</a></b> 由「那霸機場站」到「<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%89%A7%E5%BF%97" rel="noopener" target="_blank">牧志</a>／<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%8E%E6%A6%AE%E6%A9%8B" rel="noopener" target="_blank">美榮橋</a>／<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%B8%A3%E5%BB%B3%E5%89%8D" rel="noopener" target="_blank">縣廳前</a>」站，步行至酒店。</li>
+<li><b>下午晚間：</b>逛 <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E5%259C%258B%25E9%259A%259B%25E9%2580%259A%2520%25E6%25B2%2596%25E7%25B9%25A9" target="_blank">國際通（地圖）</a>；想看海可去 <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E6%25B3%25A2%25E4%25B8%258A%25E5%25AE%25AE" target="_blank">波上宮</a> 與 <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E6%25B3%25A2%25E4%25B9%258B%25E4%25B8%258A%25E6%25B5%25B7%25E6%25BF%25B1" target="_blank">波之上海灘</a>。</li>
+</ul>
+<div class="btns">
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%25B8%25A3%25E5%25BB%25B9%25E5%2589%258D%25E7%25AB%2599%2520Yui%2520Rail" target="_blank">縣廳前站</a>
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%2589%25A7%25E5%25BF%2597%25E7%25AB%2599%2520Yui%2520Rail" target="_blank">牧志站</a>
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%25AC%25AC%25E4%25B8%2580%25E7%2589%25A7%25E5%25BF%2597%25E5%2585%25AC%25E8%25A8%25AD%25E5%25B8%2582%25E5%25A0%25B4" target="_blank">牧志公設市場</a>
+</div>
+</details>
+</section>
+<section class="card" id="d2">
+<div class="section-title"><span class="day">Day 2（8/22）</span><h2><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%92%E4%B9%8B%E6%B4%9E%E7%AA%9F" rel="noopener" target="_blank">青之洞窟</a>浮潛 → <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E8%B0%B7" rel="noopener" target="_blank">北谷</a>美國村入住</h2></div>
+<details open="">
+<summary>展開／收起</summary>
+<ol>
+<li><b>上午：</b><b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%92%E4%B9%8B%E6%B4%9E%E7%AA%9F" rel="noopener" target="_blank">青之洞窟</a>（<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9C%9F%E6%A6%AE%E7%94%B0%E5%B2%AC" rel="noopener" target="_blank">真榮田岬</a>）</b> 浮潛一日團（含接送最佳）。</li>
+<li><b>下午：</b>前往 <b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E8%B0%B7" rel="noopener" target="_blank">北谷</a>・<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%8E%E6%BF%B1%E7%BE%8E%E5%9C%8B%E6%9D%91" rel="noopener" target="_blank">美濱美國村</a></b>，逛商場、看日落（<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=Sunset%20Beach" rel="noopener" target="_blank">Sunset Beach</a>）。</li>
+<li><b>晚上：</b>美國村自由活動，入住美國村區內酒店。</li>
+</ol>
+<div class="alert">安全：浮潛後至少 24 小時內不要搭飛機；記得補水、防曬、穿礁石鞋。</div>
+<div class="btns">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%259C%259F%25E6%25A6%25AE%25E7%2594%25B0%25E5%25B2%25AC%2520%25E9%259D%2592%25E4%25B9%258B%25E6%25B4%259E%25E7%25AA%259F" target="_blank">青之洞窟集合點</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%25BE%258E%25E6%25BF%25B1%25E7%25BE%258E%25E5%259C%258B%25E6%259D%2591%2520%25E5%258C%2597%25E8%25B0%25B7" target="_blank">美國村</a>
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Sunset%2520Beach%2520%25E5%258C%2597%25E8%25B0%25B7" target="_blank">Sunset Beach</a>
+</div>
+</details>
+</section>
+<section class="card" id="d3">
+<div class="section-title"><span class="day">Day 3（8/23）</span><h2>北部經典一日遊（觀光巴士）</h2></div>
+<details open="">
+<summary>展開／收起</summary>
+<p>建議預約觀光巴士（如 Hip Hop Bus 或平台一日團）：<b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%90%AC%E5%BA%A7%E6%AF%9B" rel="noopener" target="_blank">萬座毛</a> → <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8" rel="noopener" target="_blank">美麗海水族館</a> → <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%A4%E5%AE%87%E5%88%A9%E5%A4%A7%E6%A9%8B" rel="noopener" target="_blank">古宇利大橋</a></b> 等，含門票及接送更省時。</p>
+<div class="btns">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%25E8%2590%25AC%25E5%25BA%25A7%25E6%25AF%259B%2520%25E6%25B2%2596%25E7%25B9%25A9" target="_blank">萬座毛</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%25E6%25B2%2596%25E7%25B9%25A9%25E7%25BE%258E%25E9%25BA%2597%25E6%25B5%25B7%25E6%25B0%25B4%25E6%2597%258F%25E9%25A4%25A8" target="_blank">美麗海水族館</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%25E5%258F%25A4%25E5%25AE%2587%25E5%2588%25A9%25E5%25A4%25A7%25E6%25A9%258B" target="_blank">古宇利大橋</a>
+</div>
+<p class="note">如不參團：請預先查好 111/117 或 山原急行巴士時刻，並預留步行轉乘時間。</p>
+</details>
+</section>
+<section class="card" id="d4">
+<div class="section-title"><span class="day">Day 4（8/24）</span><h2><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A6%96%E9%87%8C%E5%9F%8E" rel="noopener" target="_blank">首里城</a> → <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%8E%89%E6%B3%89%E6%B4%9E" rel="noopener" target="_blank">玉泉洞</a>（<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=Okinawa%20World" rel="noopener" target="_blank">Okinawa World</a>）→ <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%80%A8%E9%95%B7%E5%B3%B6" rel="noopener" target="_blank">瀨長島</a></h2></div>
+<details open="">
+<summary>展開／收起</summary>
+<ul>
+<li><b>上午：</b>單軌到 <b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A6%96%E9%87%8C%E7%AB%99" rel="noopener" target="_blank">首里站</a></b>，步行至<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A6%96%E9%87%8C%E5%9F%8E%E5%85%AC%E5%9C%92" rel="noopener" target="_blank"><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%A6%96%E9%87%8C%E5%9F%8E" rel="noopener" target="_blank">首里城</a>公園</a>。</li>
+<li><b>中午～下午：</b>搭公車至 <b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=Okinawa%20World" rel="noopener" target="_blank">Okinawa World</a>（<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%8E%89%E6%B3%89%E6%B4%9E" rel="noopener" target="_blank">玉泉洞</a>）</b> 看鐘乳石洞與傳統表演。</li>
+<li><b>黃昏：</b><b><a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%80%A8%E9%95%B7%E5%B3%B6" rel="noopener" target="_blank">瀨長島</a> <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=Umikaji%20Terrace" rel="noopener" target="_blank">Umikaji Terrace</a></b>，晚餐＋看飛機。</li>
+</ul>
+<div class="btns">
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E9%25A6%2596%25E9%2587%258C%25E5%259F%258E%25E5%2585%25AC%25E5%259C%2592" target="_blank">首里城公園</a>
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Okinawa%2520World%2520%25E7%258E%2589%25E6%25B3%2589%25E6%25B4%259E" target="_blank">玉泉洞</a>
+<a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%2580%25A8%25E9%2595%25B7%25E5%25B3%25B6%2520Umikaji%2520Terrace" target="_blank">瀨長島</a>
+</div>
+</details>
+</section>
+<section class="card" id="d5">
+<div class="section-title"><span class="day">Day 5（8/25）</span><h2>最後採購 → 那霸機場返港</h2></div>
+<details open="">
+<summary>展開／收起</summary>
+<ul>
+<li>早上到 <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%25E7%25AC%25AC%25E4%25B8%2580%25E7%2589%25A7%25E5%25BF%2597%25E5%2585%25AC%25E8%25A8%25AD%25E5%25B8%2582%25E5%25A0%25B4" target="_blank">第一牧志公設市場</a> 買手信，或去 <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=DMM%2520Kariyushi%2520Aquarium" target="_blank">DMM Kariyushi 水族館</a>。</li>
+<li>預留 ≥2 小時到機場辦理登機。</li>
+</ul>
+</details>
+</section>
+<section class="card" id="tips">
+<h2>交通與票券／小貼士</h2>
+<ul>
+<li>市區：單軌班距約 6–10 分鐘；郊區公車班距較疏，請預留轉乘與步行時間。</li>
+<li>票券：那霸公車一日券、巴士＋單軌一日券、公車周遊券。</li>
+<li>夏季：高溫、紫外線強，請補水、防曬、雨具；留意颱風。</li>
+<li>浮潛：前一晚早睡，聽從教練指示；活動後 24 小時內避免搭機。</li>
+</ul>
+</section>
+<footer>© 2025 沖繩行程助手｜iPhone Safari 友善版（v2）</footer>
+</div>
+<script>
+(function(){
+  const root=document.documentElement;
+  // theme toggle
+  const setTheme=(t)=>{ if(!t){root.removeAttribute('data-theme');localStorage.removeItem('okitheme');return;} root.setAttribute('data-theme',t); localStorage.setItem('okitheme',t); }
+  const saved=localStorage.getItem('okitheme'); if(saved) setTheme(saved);
+  document.getElementById('lightBtn').onclick=()=>setTheme('light');
+  document.getElementById('darkBtn').onclick=()=>setTheme('dark');
+
+  // header height -> CSS var
+  const header=document.getElementById('topbar');
+  const applyHeaderH=()=>{
+    const h=header.getBoundingClientRect().height;
+    root.style.setProperty('--headerH', h+'px');
+  };
+  applyHeaderH(); window.addEventListener('resize',applyHeaderH);
+
+  // nav scroll with offset & active state
+  const btns=[...document.querySelectorAll('nav button[data-target]')];
+  const go=(id)=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    const y=el.getBoundingClientRect().top + window.scrollY - (header.offsetHeight + 10);
+    window.scrollTo({top:y,behavior:'smooth'});
+    history.replaceState(null,'','#'+id);
+    btns.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+  };
+  btns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target)));
+  // restore hash on load
+  if(location.hash){ const id=location.hash.replace('#',''); setTimeout(()=>go(id), 50); }
+
+  // expand/collapse all
+  document.getElementById('expandAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+  document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+})();
+</script>
+</body>
+</html>
