@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>沖繩五日四夜｜無自駕 Blog 互動指南（8/21–25）</title>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🏝️%3C/text%3E%3C/svg%3E" rel="icon"/>
+<style>
+:root{
+  --bg:#0f172a; --bg-soft:#111827; --card:#0b1220; --text:#e5eef9; --muted:#bcd2e8;
+  --accent:#3b82f6; --accent-2:#60a5fa; --border:rgba(255,255,255,.14);
+  --headerH:64px; --shadow:0 6px 24px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f8fafc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#334155;
+    --accent:#2563eb; --accent-2:#1d4ed8; --border:rgba(0,0,0,.12);
+    --shadow:0 8px 24px rgba(15,23,42,.08);
+  }
+}
+:root[data-theme='dark']{ --bg:#0f172a; --bg-soft:#111827; --card:#0b1220; --text:#e5eef9; --muted:#bcd2e8; --accent:#3b82f6; --accent-2:#60a5fa; --border:rgba(255,255,255,.14); --shadow:0 6px 24px rgba(0,0,0,.25);}
+:root[data-theme='light']{ --bg:#f8fafc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#334155; --accent:#2563eb; --accent-2:#1d4ed8; --border:rgba(0,0,0,.12); --shadow:0 8px 24px rgba(15,23,42,.08);}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth; scroll-padding-top: calc(var(--headerH) + env(safe-area-inset-top) + 12px);}
+body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'PingFang TC','Noto Sans TC',Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65;background:var(--bg);color:var(--text)}
+
+header{position:sticky; top:0; z-index:1000; background:linear-gradient(180deg, rgba(2,6,23,.92), rgba(2,6,23,.75)); backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border); padding: calc(8px + env(safe-area-inset-top)) 14px 10px;}
+.headline{display:flex; align-items:center; gap:10px; justify-content:space-between}
+.h-title{font-size:18px; font-weight:800; margin:0}
+.theme{display:flex; gap:8px; align-items:center}
+.theme button{border:1px solid var(--border); background:var(--bg-soft); color:var(--text); border-radius:10px; padding:8px 10px;}
+
+nav{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+nav button{padding:8px 10px;border-radius:8px;background:var(--bg-soft); color:var(--text); border:1px solid var(--border);}
+nav button.active{outline:2px solid var(--accent);}
+
+.container{max-width:980px;margin:16px auto;padding:0 14px}
+.kv{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(99,102,241,.14);border:1px solid var(--border);margin-right:6px;margin-bottom:6px;font-size:12px;color:var(--text)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:14px 0;box-shadow:var(--shadow)}
+.card h2{margin:0 0 10px;font-size:17px}
+.section-title{display:flex; align-items:center; gap:8px}
+.section-title .day{font-weight:900; color:var(--accent)}
+
+.hero{border-radius:12px; overflow:hidden; border:1px solid var(--border); margin:10px 0;}
+.hero img{width:100%;height:auto;display:block;background:#e2e8f0}
+small,.note,.caption{color:var(--muted)}
+.caption{font-size:12px;margin-top:4px}
+
+details summary{cursor:pointer;font-weight:700;color:var(--text)}
+details{scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top) + 14px);}
+
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.btn{padding:8px 10px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;border:0}
+.btn.secondary{background:var(--bg-soft);color:var(--text);border:1px solid var(--border)}
+
+.alert{border-left:4px solid #fbbf24;background:rgba(251,191,36,.08);padding:10px;border-radius:8px}
+
+ul.timeline{list-style:none; padding:0; margin:8px 0;}
+ul.timeline li{padding:8px 10px; border-left:2px dashed var(--border); margin-left:6px; position:relative;}
+ul.timeline li::before{content:''; position:absolute; left:-6px; top:14px; width:10px; height:10px; background:var(--accent); border-radius:50%;}
+ul.timeline a{text-decoration:none; color:var(--accent); font-weight:700;}
+ul.timeline a:hover{text-decoration:underline;}
+
+.fig{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:680px){ .fig{grid-template-columns:1fr 1fr;}}
+
+.gmaps{display:inline-flex; align-items:center; gap:4px; padding:2px 6px; border-radius:6px; text-decoration:none; background: rgba(37,99,235,.10); color: var(--accent); font-weight:600; font-size: 12px;}
+.gmaps svg{width:14px;height:14px;flex:0 0 14px;}
+
+footer{opacity:.75;padding:26px 14px;text-align:center}
+a, button, summary{min-height:34px}
+</style>
+</head>
+<body>
+<header id="topbar">
+<div class="headline">
+<h1 class="h-title">🏝️ 沖繩五日四夜｜無自駕 Blog 互動指南（8/21–25）</h1>
+<div class="theme">
+<button aria-label="切換淺色" id="lightBtn">☀️</button>
+<button aria-label="切換深色" id="darkBtn">🌙</button>
+</div>
+</div>
+<nav aria-label="快速切換">
+<button data-target="d1">Day1 國際通</button>
+<button data-target="d2">Day2 青之洞窟＋美國村</button>
+<button data-target="d3">Day3 北部一日遊</button>
+<button data-target="d4">Day4 首里城＋南部</button>
+<button data-target="d5">Day5 返程</button>
+<button data-target="tips">注意事項</button>
+<button id="expandAll">全部展開</button>
+<button id="collapseAll">全部收合</button>
+</nav>
+</header>
+<div class="container">
+<div class="kv">
+<span class="tag">不自駕</span>
+<span class="tag">公共交通＋一日巴士</span>
+<span class="tag">8/21–8/25</span>
+<span class="tag">浮潛安排於 Day2（距離返程 ＞ 48h）</span>
+<p class="note">提示：上方按鈕可切換各日；本頁已設定避免頂欄遮擋標題。</p>
+</div>
+<section class="card" id="d1">
+<div class="section-title"><span class="day">Day 1（8/21）</span><h2>那霸抵達 → 國際通入住</h2></div>
+<div class="hero">
+<img alt="Naha Airport Arrival Hall" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Naha_Airport_new_international_terminal_20140428-1.JPG/1280px-Naha_Airport_new_international_terminal_20140428-1.JPG" />
+</div>
+<div class="caption">Photo: W. T. Poly / Wikimedia Commons (CC BY-SA 3.0)</div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>時間軸 Timeline</h3>
+<ul class="timeline">
+<li><strong>14:30</strong> 抵達 <a href="https://goo.gl/maps/c6nZ4aE1rA9v3FkR6" target="_blank" rel="noopener"><strong>那覇空港</strong></a> ✈️ → 乘 <strong>Yui Rail</strong>（機場站→牧志/美榮橋/縣廳前，約 <strong>20–25 分</strong>，班距 4–8 分）</li>
+<li><strong>15:30</strong> 酒店 Check-in（國際通一帶步行 5–10 分）</li>
+<li><strong>16:30–18:00</strong> <a href="https://goo.gl/maps/1q2wF1E72vK5d9aM9" target="_blank" rel="noopener"><strong>波上宮</strong></a>＋<a href="https://goo.gl/maps/bYkADxX2aK2xQY3T7" target="_blank" rel="noopener"><strong>波之上海灘</strong></a> 散步看海（各 10–15 分步行距離；建議停留 60–90 分）</li>
+<li><strong>18:30–20:00</strong> <a href="https://goo.gl/maps/98H8jRzMhFkXz3rP6" target="_blank" rel="noopener"><strong>國際通</strong></a> & <a href="https://goo.gl/maps/s5Q8hM5a9Gf7nUvD9" target="_blank" rel="noopener"><strong>牧志公設市場</strong></a> 周邊逛街</li>
+<li><strong>20:00–21:00</strong> 晚餐 & 小食巡禮（<a href="https://goo.gl/maps/Hj9Cpmt4C8qNqEGS7" target="_blank" rel="noopener"><strong>屋台村</strong></a>／市場周邊）</li>
+</ul>
+<div class="fig">
+<div>
+<h3>景點詳介</h3>
+<p><strong>波上宮</strong>：沖繩代表性神社，建於臨海小山丘上；樓梯可直達 <em>波之上海灘</em>。黃昏逆光影相靚，遇到潮退時沙灘更闊。</p>
+<ul>
+<li><b>交通：</b>牧志站步行約 20 分；或單軌至旭橋站後步行/轉公車。</li>
+<li><b>逗留：</b>1–1.5 小時（連海灘）</li>
+<li><b>貼士：</b>海邊風大，帶薄外套；海灘沖洗設備有限。</li>
+</ul>
+<a class="gmaps" href="https://goo.gl/maps/1q2wF1E72vK5d9aM9" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 波上宮 地圖
+          </a>
+           
+          <a class="gmaps" href="https://goo.gl/maps/bYkADxX2aK2xQY3T7" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 波之上海灘 地圖
+          </a>
+</div>
+<div>
+<img alt="Naminoue Beach & Naminoue-gu" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Naminoue-g%C5%AB_and_Naminoue_Beach_2018.jpg/1280px-Naminoue-g%C5%AB_and_Naminoue_Beach_2018.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption">Photo: 663highland / Wikimedia Commons（CC BY 2.5）</div>
+</div>
+</div>
+<div class="hero"><img alt="Kokusai-dori Street (International Street) night view" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Kokusai-dori_Street_at_night_in_Naha_2022.jpg/1280px-Kokusai-dori_Street_at_night_in_Naha_2022.jpg"/></div>
+<div class="caption">Photo: Hajime NAKANO / Wikimedia Commons（CC BY-SA 2.0）</div>
+<h3>街頭美食／餐廳推薦（步行可達）</h3>
+<ul>
+<li><strong>牧志公設市場</strong>：海鮮丼、苦瓜炒豆腐、炸天婦羅等沖繩家常味道。參考價位 ¥600–¥1,500。
+          <a class="gmaps" href="https://goo.gl/maps/s5Q8hM5a9Gf7nUvD9" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 市場 地圖
+          </a>
+</li>
+<li><strong>國際通屋台村</strong>：串燒、拉麵、沖繩麵、生啤掃街；價位 ¥500–¥1,200。
+<a class="gmaps" href="https://goo.gl/maps/Hj9Cpmt4C8qNqEGS7" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 屋台村 地圖
+          </a>
+</li>
+</ul>
+</details>
+<h3>路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 140">
+<rect fill="#f1f5f9" height="140" width="900"></rect>
+<g transform="translate(60,70)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="240" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="120" cy="0" fill="#60a5fa" r="10"></circle><circle cx="240"cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-20" y="-20">那覇空港</text>
+<text fill="#0f172a" font-size="14" x="90" y="-20">單軌</text>
+<text fill="#0f172a" font-size="14" x="210" y="-20">牧志/美榮橋</text>
+</g>
+<g transform="translate(360,70)">
+<line stroke="#10b981" stroke-dasharray="2 4" stroke-width="6" x1="0" x2="240" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#10b981" r="12"></circle><circle cx="120" cy="0" fill="#34d399" r="10"></circle><circle cx="240" cy="0" fill="#10b981" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">酒店</text>
+<text fill="#0f172a" font-size="14" x="90" y="-20">步行</text>
+<text fill="#0f172a" font-size="14" x="210" y="-20">波上宮/海灘</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>單軌由「那覇空港站」出發，往<strong>牧志/美榮橋/縣廳前</strong>任何一站皆可；IC 卡可用。步行至國際通酒店後，再步行到<strong>波上宮→波之上海灘</strong>；如怕遠可改在「旭橋站」轉巴士。</div>
+</section>
+<section class="card" id="d2">
+<div class="section-title"><span class="day">Day 2（8/22）</span><h2>青之洞窟浮潛 → 北谷美國村入住</h2></div>
+<div class="hero">
+<img alt="Cape Maeda (access to Blue Cave)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Cape_Maeda_in_Onna%2C_Okinawa_pref%2C_Japan.JPG/1280px-Cape_Maeda_in_Onna%2C_Okinawa_pref%2C_Japan.JPG"/>
+</div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 3.0）</div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>時間軸 Timeline</h3>
+<ul class="timeline">
+<li><strong>08:00</strong> 酒店集合／自赴 <a href="https://goo.gl/maps/bB9s6A6F3xT2eJ6K7" target="_blank" rel="noopener" class="gmaps"><strong>真榮田岬</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（車程約 <strong>50–70 分</strong>）</li>
+<li><strong>09:30–12:00</strong> <a href="https://goo.gl/maps/gT2a9yY7Y8C6G6xZ9" target="_blank" rel="noopener" class="gmaps"><strong>青之洞窟</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a> 浮潛（講解＋下水＋返岸）</li>
+<li><strong>12:30–13:30</strong> 沖洗更衣 & 午餐</li>
+<li><strong>14:30</strong> 前往 <a href="https://goo.gl/maps/TfWJ2T6pTGUbDERj9" target="_blank" rel="noopener" class="gmaps"><strong>北谷・美濱美國村</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（巴士/計程車 <strong>35–50 分</strong>）</li>
+<li><strong>16:00–18:30</strong> <a href="https://goo.gl/maps/bH6N4BfB9NfG4xK19" target="_blank" rel="noopener" class="gmaps"><strong>Sunset Beach</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a> 看日落、商場散策</li>
+<li><strong>19:00</strong> 入住美國村區內酒店</li>
+</ul>
+<div class="fig">
+<div>
+<h3>活動與交通</h3>
+<p><strong>青之洞窟（真榮田岬）</strong>：石灰岩海蝕洞，能見度高；如遇浪況不佳，營運商會改點。建議參加含接送團更省時。</p>
+<ul>
+<li><b>安全：</b>遵從教練；穿礁石鞋；活動後 <strong>24 小時內避免搭機</strong>。</li>
+<li><b>裝備：</b>面鏡、呼吸管、救生衣由團方提供；自帶毛巾。</li>
+</ul>
+<a class="gmaps" href="https://goo.gl/maps/bB9s6A6F3xT2eJ6K7" rel="noopener" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 集合點 地圖
+          </a>
+</div>
+<div>
+<img alt="Mihama Town Resort American Village" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mihama_Town_Resort_American_Village_ Ferris_wheel_2.JPG/1280px-Mihama_Town_Resort_American_Village_ Ferris_wheel_2.JPG" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption">Photo: Abasaa / Wikimedia Commons（CC BY-SA 3.0）</div>
+</div>
+</div>
+<div class="hero"><img alt="Chatan Sunset Beach" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunset_Beach_in_Chatan%2C_Okinawa_pref%2C_Japan.JPG/1280px-Sunset_Beach_in_Chatan%2C_Okinawa_pref%2C_Japan.JPG"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+</details>
+<h3>路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(60,50)">
+<line stroke="#ef4444" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="300" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#ef4444" r="12"></circle><circle cx="150" cy="0" fill="#fb7185" r="10"></circle><circle cx="300" cy="0" fill="#ef4444" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">那覇/酒店</text><text fill="#0f172a" font-size="14" x="120" y="-20">接送/巴士</text><text fill="#0f172a" font-size="14" x="270" y="-20">真榮田岬</text>
+</g>
+<g transform="translate(420,110)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="300" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="150" cy="0" fill="#60a5fa" r="10"></circle><circle cx="300" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">真榮田岬</text><text fill="#0f172a" font-size="14" x="120" y="-20">巴士/計程車</text><text fill="#0f172a" font-size="14" x="280" y="-20">北谷美國村</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>參加團有接送最省事；如自赴，從那覇坐巴士至<strong>真榮田岬</strong>（視路線 50–70 分）。午後前往<strong>北谷</strong>可選直達巴士或計程車；提早看好回程時間在 Sunset Beach 看日落。</div>
+</section>
+<section class="card" id="d3">
+<div class="section-title"><span class="day">Day 3（8/23）</span><h2>北部經典一日遊（觀光巴士）</h2></div>
+<div class="hero">
+<img alt="Manzamo cliff (Onna, Okinawa)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cape_Manza_in_Onna%2C_Okinawa_pref%2C_Japan_001.JPG/1280px-Cape_Manza_in_Onna%2C_Okinawa_pref%2C_Japan_001.JPG"/>
+</div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 3.0）</div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>時間軸（參考 Hip Hop Bus/一日團）</h3>
+<ul class="timeline">
+<li><strong>08:00</strong> 那覇／美國村集合出發</li>
+<li><strong>09:30</strong> <a href="https://goo.gl/maps/c63W7mG4MGoaG8r37" target="_blank" rel="noopener" class="gmaps"><strong>萬座毛</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（停留 40–60 分）</li>
+<li><strong>11:00–13:30</strong> <a href="https://goo.gl/maps/bKj8Zc1xZyhJ2Zgp8" target="_blank" rel="noopener" class="gmaps"><strong>美麗海水族館</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（含午餐，自由參觀 2–2.5 小時）</li>
+<li><strong>14:30</strong> <a href="https://goo.gl/maps/vT6xQ5yEa9K1wS8x8" target="_blank" rel="noopener" class="gmaps"><strong>古宇利大橋</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（停留 30–40 分）</li>
+<li><strong>18:00</strong> 回到那覇／美國村解散</li>
+</ul>
+</details>
+<div class="hero"><img alt="Okinawa Churaumi Aquarium entrance" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Okinawa_Churaumi_Aquarium_Entrance.jpg/1280px-Okinawa_Churaumi_Aquarium_Entrance.jpg"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+<div class="hero"><img alt="Kouri Bridge" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kouri_Bridge_in_Nakijin%2C_Okinawa%2C_Japan.jpg/1280px-Kouri_Bridge_in_Nakijin%2C_Okinawa%2C_Japan.jpg"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+<h3>路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(40,80)">
+<line stroke="#0ea5e9" stroke-width="6" x1="0" x2="220" y1="0" y2="0"></line>
+<line stroke="#0ea5e9" stroke-dasharray="6 6" stroke-width="6" x1="220" x2="480" y1="0" y2="0"></line>
+<line stroke="#0ea5e9" stroke-width="6" x1="480" x2="740" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="220" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="480" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="740" cy="0" fill="#0ea5e9" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">出發</text><text fill="#0f172a" font-size="14" x="180" y="-20">萬座毛</text><text fill="#0f172a" font-size="14" x="440" y="-20">美麗海</text><text fill="#0f172a" font-size="14" x="700" y="-20">古宇利</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>建議預約觀光巴士（如 Hip Hop Bus），行程含<strong>萬座毛→美麗海→古宇利</strong>，時間掌控穩定；自行搭乘者可查 111/117 或<strong>山原急行巴士</strong>，需預留轉乘與步行。</div>
+</section>
+<section class="card" id="d4">
+<div class="section-title"><span class="day">Day 4（8/24）</span><h2>首里城 → 玉泉洞（Okinawa World）→ 瀨長島</h2></div>
+<div class="hero">
+<img alt="Shuri Castle" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Shuri-j%C5%8D_uchinaa_2018_B.jpg/1280px-Shuri-j%C5%8D_uchinaa_2018_B.jpg"/>
+</div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 3.0）</div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>時間軸 Timeline</h3>
+<ul class="timeline">
+<li><strong>09:00</strong> 單軌至 <strong>首里站</strong>（那覇市區出發約 20–25 分），步行至首里城公園</li>
+<li><strong>09:30–11:30</strong> <a href="https://goo.gl/maps/XW4XwL8tP8jH3Yvu8" target="_blank" rel="noopener" class="gmaps"><strong>首里城公園</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（園區漫遊 1.5–2 小時）</li>
+<li><strong>12:30–15:00</strong> 巴士/計程車前往 <a href="https://goo.gl/maps/bX6fL4A7VzYJd2Qh7" target="_blank" rel="noopener" class="gmaps"><strong>Okinawa World（玉泉洞）</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（建議 2–2.5 小時）</li>
+<li><strong>16:30–19:00</strong> <a href="https://goo.gl/maps/j6fB8BAbf8oV5BZD7" target="_blank" rel="noopener" class="gmaps"><strong>瀨長島 Umikaji Terrace</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（晚餐＋看飛機）</li>
+</ul>
+<div class="fig">
+<div>
+<h3>美食推薦</h3>
+<ul>
+<li><strong>首里周邊食堂</strong>：沖繩麵、三枚肉、豆腐料理；¥700–¥1,200。</li>
+<li><strong>Umikaji Terrace</strong>：咖啡、甜品、簡餐；海景一流；¥800–¥1,500。</li>
+</ul>
+</div>
+<div>
+<img alt="Umikaji Terrace, Senagajima" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Senaga_Island_Umikaji_Terrace_in_Tomigusuku%2C_Okinawa%2C_Japan.jpg/1280px-Senaga_Island_Umikaji_Terrace_in_Tomigusuku%2C_Okinawa%2C_Japan.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+</div>
+</div>
+</details>
+<div class="hero"><img alt="Gyokusendo Cave (Okinawa World)" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Gyokusen-do_01.JPG/1280px-Gyokusen-do_01.JPG"/></div>
+<div class="caption">Photo: Wikimedia Commons（CC BY-SA 4.0）</div>
+<h3>路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(60,50)">
+<line stroke="#16a34a" stroke-dasharray="6 6" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#16a34a" r="12"></circle><circle cx="260" cy="0" fill="#16a34a" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">那覇</text><text fill="#0f172a" font-size="14" x="240" y="-20">首里城</text>
+</g>
+<g transform="translate(360,110)">
+<line stroke="#f59e0b" stroke-width="6" x1="0" x2="220" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#f59e0b" r="12"></circle><circle cx="220" cy="0" fill="#f59e0b" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">首里</text><text fill="#0f172a" font-size="14" x="200" y="-20">玉泉洞</text>
+</g>
+<g transform="translate(640,50)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="200" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="200" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">玉泉洞</text><text fill="#0f172a" font-size="14" x="180" y="-20">瀨長島</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>上午搭單軌至<strong>首里站</strong>步行入園；之後轉巴士/計程車至<strong>Okinawa World（玉泉洞）</strong>；黃昏再往<strong>瀨長島</strong>，留意末班車時刻或視情況回那覇轉乘。</div>
+</section>
+<section class="card" id="d5">
+<div class="section-title"><span class="day">Day 5（8/25）</span><h2>最後採購 → 那霸機場返港</h2></div>
+<div class="hero">
+<img alt="Makishi Public Market interior" decoding="async" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/The_provisional_market_of_the_First_Makishi_Public_Market_in_Naha_2022.jpg/1280px-The_provisional_market_of_the_First_Makishi_Public_Market_in_Naha_2022.jpg"/>
+</div>
+<div class="caption">Photo: Hajime NAKANO / Wikimedia Commons（CC BY-SA 2.0）</div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>時間軸 Timeline</h3>
+<ul class="timeline">
+<li><strong>09:00–10:30</strong> <a href="https://goo.gl/maps/s5Q8hM5a9Gf7nUvD9" target="_blank" rel="noopener" class="gmaps"><strong>第一牧志公設市場</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a> 採購手信／早餐小吃</li>
+<li><strong>11:00</strong> 返回酒店取行李 → 單軌至<a href="https://goo.gl/maps/c6nZ4aE1rA9v3FkR6" target="_blank" rel="noopener" class="gmaps"><strong>那覇空港</strong> <svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg></a>（車程 20–25 分）</li>
+<li><strong>起飛前 2 小時</strong> 抵達機場辦理登機、安全檢查</li>
+</ul>
+</details>
+<h3>路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 120">
+<rect fill="#f1f5f9" height="120" width="900"></rect>
+<g transform="translate(80,60)">
+<line stroke="#334155" stroke-dasharray="6 6" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#334155" r="12"></circle><circle cx="260" cy="0" fill="#334155" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">牧志市場</text><text fill="#0f172a" font-size="14" x="240" y="-20">酒店</text>
+</g>
+<g transform="translate(420,60)">
+<line stroke="#2563eb" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="260" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">單軌</text><text fill="#0f172a" font-size="14" x="220" y="-20">機場</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>從<strong>牧志公設市場</strong>返酒店取行李，搭單軌至<strong>那覇空港</strong>；高峰期安檢較慢，請預留 2 小時以上。</div>
+</section>
+<section class="card" id="tips">
+<h2>交通與票券／小貼士</h2>
+<ul>
+<li>市區單軌：班距約 4–10 分；郊區公車班距較疏，預留轉乘與步行。</li>
+<li>票券：單軌 1/2 日券、巴士周遊券；視行程密度選擇。</li>
+<li>夏季：高溫與紫外線強，補水、防曬、輕便雨具；留意颱風預報。</li>
+<li>海上活動：依教練指示；活動後 24 小時內避免搭機。</li>
+</ul>
+</section>
+<footer>© 2025 沖繩行程助手｜iPhone Safari 友善版（Blog 版，外部圖片預覽）</footer>
+</div>
+<script>
+  (function(){
+    const root=document.documentElement;
+    const setTheme=(t)=>{ if(!t){root.removeAttribute('data-theme');localStorage.removeItem('okitheme');return;} root.setAttribute('data-theme',t); localStorage.setItem('okitheme',t); };
+    const saved=localStorage.getItem('okitheme'); if(saved) setTheme(saved);
+    document.getElementById('lightBtn').onclick=()=>setTheme('light');
+    document.getElementById('darkBtn').onclick=()=>setTheme('dark');
+
+    const header=document.getElementById('topbar');
+    const applyHeaderH=()=>{ const h=header.getBoundingClientRect().height; root.style.setProperty('--headerH', h+'px'); };
+    applyHeaderH(); window.addEventListener('resize',applyHeaderH);
+
+    const btns=[...document.querySelectorAll('nav button[data-target]')];
+    const go=(id)=>{ const el=document.getElementById(id); if(!el) return;
+      const y=el.getBoundingClientRect().top + window.scrollY - (header.offsetHeight + 10);
+      window.scrollTo({top:y,behavior:'smooth'}); history.replaceState(null,'','#'+id);
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+    };
+    btns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target)));
+    if(location.hash){ const id=location.hash.replace('#',''); setTimeout(()=>go(id), 50); }
+
+    document.getElementById('expandAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+    document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+  })();
+  </script>
+</body>
+</html>
