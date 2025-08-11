@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>2025 沖繩之旅（8/21–8/25）</title>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E✈️%3C/text%3E%3C/svg%3E" rel="icon"/>
+<style>
+:root{
+  --bg:#0f172a; --bg-soft:#111827; --card:#0b1220; --text:#e5eef9; --muted:#bcd2e8;
+  --accent:#3b82f6; --accent-2:#60a5fa; --border:rgba(255,255,255,.14);
+  --headerH:64px; --shadow:0 6px 24px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f8fafc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#334155;
+    --accent:#2563eb; --accent-2:#1d4ed8; --border:rgba(0,0,0,.12);
+    --shadow:0 8px 24px rgba(15,23,42,.08);
+  }
+}
+:root[data-theme='dark']{ --bg:#0f172a; --bg-soft:#111827; --card:#0b1220; --text:#e5eef9; --muted:#bcd2e8; --accent:#3b82f6; --accent-2:#60a5fa; --border:rgba(255,255,255,.14); --shadow:0 6px 24px rgba(0,0,0,.25);}
+:root[data-theme='light']{ --bg:#f8fafc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#334155; --accent:#2563eb; --accent-2:#1d4ed8; --border:rgba(0,0,0,.12); --shadow:0 8px 24px rgba(15,23,42,.08);}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth; scroll-padding-top: calc(var(--headerH) + env(safe-area-inset-top) + 12px);}
+body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'PingFang TC','Noto Sans TC',Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65;background:var(--bg);color:var(--text)}
+
+header{position:sticky; top:0; z-index:1000; background:linear-gradient(180deg, rgba(2,6,23,.92), rgba(2,6,23,.75)); backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border); padding: calc(8px + env(safe-area-inset-top)) 14px 10px;}
+.headline{display:flex; align-items:center; gap:10px; justify-content:space-between}
+.h-title{font-size:18px; font-weight:800; margin:0}
+.theme{display:flex; gap:8px; align-items:center}
+.theme button{border:1px solid var(--border); background:var(--bg-soft); color:var(--text); border-radius:10px; padding:8px 10px;}
+
+nav{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+nav button{padding:8px 10px;border-radius:8px;background:var(--bg-soft); color:var(--text); border:1px solid var(--border);}
+nav button.active{outline:2px solid var(--accent);}
+
+.container{max-width:980px;margin:16px auto;padding:0 14px}
+.kv{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(99,102,241,.14);border:1px solid var(--border);margin-right:6px;margin-bottom:6px;font-size:12px;color:var(--text)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:14px 0;box-shadow:var(--shadow)}
+.card h2{margin:0 0 10px;font-size:17px}
+.section-title{display:flex; align-items:center; gap:8px}
+.section-title .day{font-weight:900; color:var(--accent)}
+
+.hero{border-radius:12px; overflow:hidden; border:1px solid var(--border); margin:10px 0;}
+.hero img{width:100%;height:auto;display:block;background:#e2e8f0}
+small,.note,.caption{color:var(--muted)}
+.caption{font-size:12px;margin-top:4px}
+
+details summary{cursor:pointer;font-weight:700;color:var(--text)}
+details{scroll-margin-top: calc(var(--headerH) + env(safe-area-inset-top) + 14px);}
+
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.btn{padding:8px 10px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;border:0}
+.btn.secondary{background:var(--bg-soft);color:var(--text);border:1px solid var(--border)}
+
+.alert{border-left:4px solid #fbbf24;background:rgba(251,191,36,.08);padding:10px;border-radius:8px}
+
+ul.timeline{list-style:none; padding:0; margin:8px 0;}
+ul.timeline li{padding:8px 10px; border-left:2px dashed var(--border); margin-left:6px; position:relative;}
+ul.timeline li::before{content:''; position:absolute; left:-6px; top:14px; width:10px; height:10px; background:var(--accent); border-radius:50%;}
+ul.timeline a{text-decoration:none; color:var(--accent); font-weight:700;}
+ul.timeline a:hover{text-decoration:underline;}
+
+/* 標註地鐵／單軌車站的連結，採用紫色以區別一般景點 */
+a.station{color:#7e22ce;}
+
+.fig{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:680px){ .fig{grid-template-columns:1fr 1fr;}}
+
+.gmaps{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; text-decoration:none; background: rgba(37,99,235,.10); color: var(--accent); font-weight:600;}
+.gmaps svg{width:18px;height:18px;flex:0 0 18px;}
+
+footer{opacity:.75;padding:26px 14px;text-align:center}
+a, button, summary{min-height:34px}
+
+:root[data-theme='light'] .h-title{color:#0f172a;}
+:root[data-theme='dark'] .h-title{color:#e5eef9;}
+h1.h-title{color:var(--text);}
+
+/* H1 手機優化 + 漸層效果 */
+.h-title{
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  font-size: clamp(20px, 5.5vw, 28px);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  margin: 0;
+}
+/* 深／淺模式下維持良好對比度（以漸層為主，fallback 為 --text） */
+:root[data-theme='light'] .h-title{ -webkit-text-fill-color: transparent; }
+:root[data-theme='dark'] .h-title{ -webkit-text-fill-color: transparent; }
+@supports not(-webkit-background-clip: text){
+  .h-title{ color: var(--text); }
+}
+/* Header 內距微調（手機）*/
+@media (max-width: 420px){
+  header{ padding-left: 12px; padding-right: 12px; }
+}
+
+
+/* H1 外觀再強化：描邊 + 投影（按主題微調） */
+.h-title{
+  -webkit-text-stroke: 0.6px rgba(0,0,0,.18);
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.05));
+}
+:root[data-theme='dark'] .h-title{
+  -webkit-text-stroke: 0.6px rgba(255,255,255,.22);
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.35));
+}
+/* 時段 emoji 細節間距 */
+.emo-time{ opacity:.9; }
+
+
+/* ==== Header 排版衝突修正（H1 與主題切換按鈕） ==== */
+.headline{
+  display:flex;
+  align-items:flex-start; /* 避免被擠壓時垂直置中產生重疊 */
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;        /* 需要時自動換行 */
+}
+.h-title{
+  flex:1 1 auto;         /* 標題優先佔滿可用寬度 */
+  min-width:220px;       /* 避免太窄時字被擠壓到按鈕上 */
+}
+.theme{
+  flex:0 0 auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;        /* 小螢幕時按鈕可換行 */
+  max-width:100%;
+}
+.theme button{
+  padding:6px 8px;       /* 稍為縮小，減少佔位 */
+}
+/* 超小螢幕：把按鈕列放到下一行並留出間距 */
+@media (max-width: 420px){
+  .headline{flex-direction:column; align-items:flex-start;}
+  .theme{margin-top:6px;}
+}
+/* Sticky header 高度跟隨內容（避免重疊遮標題） */
+html{scroll-padding-top: calc(var(--headerH) + env(safe-area-inset-top) + 12px);}
+</style>
+<meta content="沖繩五日四夜｜不自駕也好玩：國際通、青之洞窟、美國村、萬座毛、美麗海水族館、首里城、玉泉洞、瀨長島等完整行程，含交通指引、景點與餐廳地圖清單。" name="description"/></head>
+<body>
+<header id="topbar">
+<div class="headline">
+<h1 class="h-title">2025 沖繩之旅（8/21–8/25）</h1>
+<div class="theme"><button aria-label="跟隨系統" id="autoBtn">🖥️</button>
+<button aria-label="切換淺色" id="lightBtn">☀️</button>
+<button aria-label="切換深色" id="darkBtn">🌙</button>
+</div>
+</div>
+<nav aria-label="快速切換">
+<button aria-label="跳到 Day1 國際通" data-target="d1">Day1 國際通</button>
+<button aria-label="跳到 Day2 青之洞窟＋美國村" data-target="d2">Day2 青之洞窟＋美國村</button>
+<button aria-label="跳到 Day3 北部一日遊" data-target="d3">Day3 北部一日遊</button>
+<button aria-label="跳到 Day4 首里城＋南部" data-target="d4">Day4 首里城＋南部</button>
+<button aria-label="跳到 Day5 返程" data-target="d5">Day5 返程</button>
+<button aria-label="跳到 景點列表" data-target="poi">景點列表</button><button aria-label="跳到 餐廳列表" data-target="restaurants">餐廳列表</button><button aria-label="跳到 注意事項" data-target="tips">注意事項</button>
+<button id="expandAll">全部展開</button>
+<button id="collapseAll">全部收合</button>
+</nav>
+</header>
+<div class="container">
+<div class="kv">
+<span class="tag">不自駕</span>
+<span class="tag">公共交通＋一日巴士</span>
+<span class="tag">8/21–8/25</span>
+<span class="tag">浮潛安排於 Day2（距離返程 ＞ 48h）</span>
+<p class="note">提示：上方按鈕可切換各日；本頁已設定避免頂欄遮擋標題。</p>
+
+<section class="card" id="map">
+  <div class="section-title"><span class="day">互動地圖</span><h2>Google My Maps（可點地標 / 導航）</h2></div>
+  <div class="hero" style="aspect-ratio: 16/9;">
+    <!-- 將下方 YOUR_MYMAP_ID 換成你自己的 My Maps 共享 ID -->
+    <iframe src="https://www.google.com/maps/d/embed?mid=YOUR_MYMAP_ID&ehbc=2E312F" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+  <div class="btns">
+    <a class="btn" href="https://www.google.com/maps/d/" target="_blank" rel="noopener">開啟 My Maps 建立 / 管理</a>
+    <a class="btn secondary" href="#poi">跳到景點列表</a>
+  </div>
+  <small class="caption">提示：在 My Maps 內用「新增圖層」分組（景點 / 餐廳 / 住宿 / 交通），發佈為「公開」，複製分享連結中的 <code>mid=...</code> 置換上方網址即可。</small>
+</section>
+
+<section class="card" id="bus-cheatsheet">
+  <div class="section-title"><span class="day">交通</span><h2>巴士路線小抄（不自駕）</h2></div>
+  <ul>
+    <li><b>萬座毛：</b>從那覇 / 美國村沿國道58搭 <b>20 或 120</b>（名護西／名護西空港線），於「<b>恩納村役場前</b>」或「<b>万座ビーチ前</b>」下車，步行約 15–20 分到售票入口。（官方英文時刻表含停靠站）</li>
+    <li><b>美麗海水族館：</b>那覇機場直達可搭 <b>やんばる急行バス（Yanbaru Express）</b> 或 <b>沖繩機場接駁巴士</b> 至「<b>記念公園前</b>」；或先乘 <b>111/117</b> 快速到「名護BT」，轉乘地方巴士前往。</li>
+    <li><b>古宇利大橋／古宇利島：</b>由「名護BT」轉 <b>72 屋我地線</b>（琉球／沖縄巴士）往「古宇利島」各站；或使用 <b>Yanbaru Express 四島線（4T）</b> 於「古宇利島の駅ソラハシ」等站上下，連接美麗海一帶。</li>
+  </ul>
+  <small class="caption">注意：旺季及颱風前後班次會調整，出發當日請再查官方時刻表。</small>
+</section>
+
+<section class="card" id="hours-fees">
+  <div class="section-title"><span class="day">開放</span><h2>營業時間 / 門票（2025.08 版）</h2></div>
+  <ul>
+    <li><b>美麗海水族館：</b>淡季 8:30–18:30（最晚 17:30）；7/19–7/31 延長至 20:00；8/1–8/31 延長至 21:00（最晚 20:00）。票價：<b>成人 ¥2,180、高中生 ¥1,440、國中小 ¥710、6歲以下免費</b>。</li>
+    <li><b>首里城（有料區）：</b>4–6月/10–11月 8:30–19:00；7–9月 8:30–20:00；12–3月 8:30–18:00。票價：<b>成人 ¥400、高中生 ¥300、國中小 ¥160、6歲以下免費</b>。</li>
+    <li><b>玉泉洞（Okinawa World）：</b>營業 9:00–17:30（最晚 16:00）；套票（玉泉洞＋王國村＋蛇博物館）參考價：<b>成人 ¥2,000、兒童 ¥1,000</b>。</li>
+  </ul>
+  <small class="caption">以上以官方公告為準；天候惡劣（颱風）可能臨時休園或縮短時段。</small>
+</section>
+
+<section class="card" id="safety">
+  <div class="section-title"><span class="day">安全</span><h2>緊急聯絡 / 防颱提示</h2></div>
+  <div class="alert">
+    <p><b>日本 110</b>＝報警｜<b>119</b>＝消防 / 救護。</p>
+    <p><b>JNTO Japan Visitor Hotline：</b>050-3816-2787（24/7，多語言）。</p>
+    <p><b>颱風資訊：</b>出發前與行程中請查 <a href="https://www.jma.go.jp/bosai/map.html" target="_blank" rel="noopener">JMA 氣象廳 Typhoon</a>；沖繩縣多語災害資訊入口 <a href="https://www.bousai.okinawa.jp/" target="_blank" rel="noopener">Haisai! 防災でーびる</a>；如遇巴士停駛，請依官方公告調整行程。</p>
+    <p><b>保險建議：</b>建議購買含颱風 / 交通延誤保障的旅遊保險；保留票根與費用憑證以利理賠。</p>
+  </div>
+</section>
+</div>
+<section class="card" id="d1">
+<div class="section-title"><span class="day">Day 1（8/21）</span><h2>✈️ 那霸抵達 → 國際通入住 🛍️</h2></div>
+<div class="hero">
+<!-- 使用 Wikimedia 直連圖片取代第三方代理，避免圖片失效 -->
+<img alt="Naha Airport Arrival Hall" decoding="async" loading="lazy" src="naha-airport-arrival-hall.jpg"/>
+</div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.20694,127.64639" rel="noopener noreferrer" target="_blank">那覇空港 地圖</a></div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>🕒 時間軸 Timeline</h3>
+<ul class="timeline">
+<li>✈️ 🧳 📍 ✈️ <strong>14:30</strong> 抵達 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.20694,127.64639" rel="noopener noreferrer" target="_blank"><strong>那覇空港</strong></a> ✈️ → 乘 <strong>Yui Rail</strong>（<a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=那覇空港駅" rel="noopener noreferrer" target="_blank">機場站</a> → <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=牧志駅" rel="noopener noreferrer" target="_blank">牧志</a> / <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=美栄橋駅" rel="noopener noreferrer" target="_blank">美榮橋</a> / <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=県庁前駅 沖縄" rel="noopener noreferrer" target="_blank">縣廳前</a>，約 <strong>20–25 分</strong>，班距 4–8 分）<span class="emo-time"> ☀️</span></li>
+<li>🚶‍♂️ 👣 📍 🛍️ <strong>15:30</strong> 酒店 Check-in（國際通一帶步行 5–10 分）<span class="emo-time"> ☀️</span></li>
+<li>🚶‍♂️ 👣 📍 ⛩️ <strong>16:30–18:00</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=26.22056,127.67528" rel="noopener noreferrer" target="_blank"><strong>波上宮</strong></a>＋<a href="https://www.google.com/maps/search/?api=1&amp;query=26.22111,127.67389" rel="noopener noreferrer" target="_blank"><strong>波之上海灘</strong></a> 散步看海（各 10–15 分步行距離；建議停留 60–90 分）<span class="emo-time"> ☀️</span></li>
+<li>📍 🛍️ <strong>18:30–20:00</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21556,127.68333" rel="noopener noreferrer" target="_blank"><strong>國際通</strong></a> &amp; <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank"><strong>牧志公設市場</strong></a> 周邊逛街<span class="emo-time"> 🌆</span></li>
+<li>📍 🛍️ <strong>20:00–21:00</strong> 晚餐 &amp; 小食巡禮（<a href="https://www.google.com/maps/search/?api=1&amp;query=國際通屋台村" rel="noopener noreferrer" target="_blank"><strong>屋台村</strong></a>／市場周邊）<span class="emo-time"> 🌆</span></li>
+</ul>
+<div class="fig">
+<div>
+<h3>景點詳介</h3>
+<p><strong>波上宮</strong>：沖繩代表性神社，建於臨海小山丘上；樓梯可直達 <em>波之上海灘</em>。黃昏逆光影相靚，遇到潮退時沙灘更闊。</p>
+<ul>
+<li><b>交通：</b>牧志站步行約 20 分；或單軌至<a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=旭橋駅" rel="noopener noreferrer" target="_blank"><strong>旭橋站</strong></a>後步行/轉公車。</li>
+<li><b>逗留：</b>1–1.5 小時（連海灘）</li>
+<li><b>貼士：</b>海邊風大，帶薄外套；海灘沖洗設備有限。</li>
+</ul>
+<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=26.22056,127.67528" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 波上宮 地圖
+          </a>
+           
+          <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=26.22111,127.67389" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 波之上海灘 地圖
+          </a>
+</div>
+<div>
+<img alt="Naminoue Beach &amp; Naminoue-gu" decoding="async" loading="lazy" src="naminoue-beach-naminoue-gu.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.22056,127.67528" rel="noopener noreferrer" target="_blank">波上宮 &amp; 波之上海灘 地圖</a></div>
+</div>
+</div>
+<div class="hero"><img alt="Kokusai-dori Street (International Street) night view" decoding="async" loading="lazy" src="kokusai-dori-street-international-street-night-view.jpg"/></div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.21556,127.68333" rel="noopener noreferrer" target="_blank">國際通 地圖</a></div>
+<h3>🍽️ 街頭美食／餐廳推薦（步行可達）</h3>
+<ul>
+<li><strong>牧志公設市場</strong>：海鮮丼、苦瓜炒豆腐、炸天婦羅等沖繩家常味道。參考價位 ¥600–¥1,500。
+          <a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 市場 地圖
+          </a>
+</li>
+<li><strong>國際通屋台村</strong>：串燒、拉麵、沖繩麵、生啤掃街；價位 ¥500–¥1,200。
+<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=國際通屋台村" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 屋台村 地圖
+          </a>
+</li>
+</ul>
+</details>
+<h3>🗺️ 路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 140">
+<rect fill="#f1f5f9" height="140" width="900"></rect>
+<g transform="translate(60,70)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="240" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="120" cy="0" fill="#60a5fa" r="10"></circle><circle cx="240" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-20" y="-20">那覇空港</text>
+<text fill="#0f172a" font-size="14" x="90" y="-20">單軌</text>
+<text fill="#0f172a" font-size="14" x="210" y="-20">牧志/美榮橋</text>
+</g>
+<g transform="translate(360,70)">
+<line stroke="#10b981" stroke-dasharray="2 4" stroke-width="6" x1="0" x2="240" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#10b981" r="12"></circle><circle cx="120" cy="0" fill="#34d399" r="10"></circle><circle cx="240" cy="0" fill="#10b981" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">酒店</text>
+<text fill="#0f172a" font-size="14" x="90" y="-20">步行</text>
+<text fill="#0f172a" font-size="14" x="210" y="-20">波上宮/海灘</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/><span>單軌由「那覇空港站」出發，往<a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=牧志駅" rel="noopener noreferrer" target="_blank">牧志</a> / <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=美栄橋駅" rel="noopener noreferrer" target="_blank">美榮橋</a> / <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=県庁前駅 沖縄" rel="noopener noreferrer" target="_blank">縣廳前</a> 任何一站皆可；IC 卡可用。步行至國際通酒店後，再步行到 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.22056,127.67528" rel="noopener noreferrer" target="_blank">波上宮</a> → <a href="https://www.google.com/maps/search/?api=1&amp;query=26.22111,127.67389" rel="noopener noreferrer" target="_blank">波之上海灘</a>；如怕遠可改在「<a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=旭橋駅" rel="noopener noreferrer" target="_blank">旭橋站</a>」轉巴士。</span></div>
+</section>
+<section class="card" id="d2">
+<div class="section-title"><span class="day">Day 2（8/22）</span><h2>🤿 青之洞窟浮潛 → 北谷美國村入住 🌅</h2></div>
+<div class="hero">
+<img alt="Cape Maeda (access to Blue Cave)" decoding="async" loading="lazy" src="cape-maeda-access-to-blue-cave.jpg"/>
+</div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.44985,127.80523" rel="noopener noreferrer" target="_blank">真榮田岬 地圖</a></div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>🕒 時間軸 Timeline</h3>
+<ul class="timeline">
+<li>📍 <strong>08:00</strong> 酒店集合／自赴 <a href="https://www.google.com/maps/search/?api=1&amp;query=真栄田岬" rel="noopener noreferrer" target="_blank"><strong>真榮田岬</strong></a>（車程約 <strong>50–70 分</strong>）<span class="emo-time"> 🥐</span></li>
+<li>📍 🤿 <strong>09:30–12:00</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=青の洞窟" rel="noopener noreferrer" target="_blank"><strong>青之洞窟</strong></a> 浮潛（講解＋下水＋返岸）<span class="emo-time"> 🥐</span></li>
+<li>📍 🍱 <strong>12:30–13:30</strong> 沖洗更衣 &amp; 午餐<span class="emo-time"> 🍱</span></li>
+<li>🚌 🧭 📍 🚌 <strong>14:30</strong> 前往 <a href="https://www.google.com/maps/search/?api=1&amp;query=北谷美浜アメリカンビレッジ" rel="noopener noreferrer" target="_blank"><strong>北谷・美濱美國村</strong></a>（巴士/計程車 <strong>35–50 分</strong>）<span class="emo-time"> ☀️</span></li>
+<li>📍 🏖️ <strong>16:00–18:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=サンセットビーチ" rel="noopener noreferrer" target="_blank"><strong>Sunset Beach</strong></a> 看日落、商場散策<span class="emo-time"> ☀️</span></li>
+<li>📍 🎡 <strong>19:00</strong> 入住美國村區內酒店<span class="emo-time"> 🌆</span></li>
+</ul>
+<div class="fig">
+<div>
+<h3>🧭 活動與交通</h3>
+<p><strong>青之洞窟（真榮田岬）</strong>：石灰岩海蝕洞，能見度高；如遇浪況不佳，營運商會改點。建議參加含接送團更省時。</p>
+<ul>
+<li><b>安全：</b>遵從教練；穿礁石鞋；活動後 <strong>24 小時內避免搭機</strong>。</li>
+<li><b>裝備：</b>面鏡、呼吸管、救生衣由團方提供；自帶毛巾。</li>
+</ul>
+<a class="gmaps" href="https://www.google.com/maps/search/?api=1&amp;query=真栄田岬" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"></path></svg> 集合點 地圖
+          </a>
+</div>
+<div>
+<img alt="Mihama Town Resort American Village" decoding="async" loading="lazy" src="mihama-town-resort-american-village.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.32178,127.75514" rel="noopener noreferrer" target="_blank">北谷美國村 地圖</a></div>
+</div>
+</div>
+<div class="hero"><img alt="Chatan Sunset Beach" decoding="async" loading="lazy" src="chatan-sunset-beach.jpg"/></div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.32194,127.75556" rel="noopener noreferrer" target="_blank">Sunset Beach 地圖</a></div>
+</details>
+<h3>🗺️ 路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(60,50)">
+<line stroke="#ef4444" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="300" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#ef4444" r="12"></circle><circle cx="150" cy="0" fill="#fb7185" r="10"></circle><circle cx="300" cy="0" fill="#ef4444" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">那覇/酒店</text><text fill="#0f172a" font-size="14" x="120" y="-20">接送/巴士</text><text fill="#0f172a" font-size="14" x="270" y="-20">真榮田岬</text>
+</g>
+<g transform="translate(420,110)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="300" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="150" cy="0" fill="#60a5fa" r="10"></circle><circle cx="300" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">真榮田岬</text><text fill="#0f172a" font-size="14" x="120" y="-20">巴士/計程車</text><text fill="#0f172a" font-size="14" x="280" y="-20">北谷美國村</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>參加團有接送最省事；如自赴，從那覇坐巴士至<strong>真榮田岬</strong>（視路線 50–70 分）。午後前往<strong>北谷</strong>可選直達巴士或計程車；提早看好回程時間在 Sunset Beach 看日落。</div>
+</section>
+<section class="card" id="d3">
+<div class="section-title"><span class="day">Day 3（8/23）</span><h2>🚌 北部經典一日遊（觀光巴士）</h2></div>
+<div class="hero">
+<img alt="Manzamo cliff (Onna, Okinawa)" decoding="async" loading="lazy" src="manzamo-cliff-onna-okinawa.jpg"/>
+</div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.5025,127.85056" rel="noopener noreferrer" target="_blank">萬座毛 地圖</a></div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>🕒 時間軸（參考 Hip Hop Bus/一日團）</h3>
+<ul class="timeline">
+<li>✈️ 🧳 📍 🎡 <strong>08:00</strong> 那覇／美國村集合出發<span class="emo-time"> 🥐</span></li>
+<li>📍 🏞️ <strong>09:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=万座毛" rel="noopener noreferrer" target="_blank"><strong>萬座毛</strong></a>（停留 40–60 分）<span class="emo-time"> 🥐</span></li>
+<li>📍 🐠 <strong>11:00–13:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=沖縄美ら海水族館" rel="noopener noreferrer" target="_blank"><strong>美麗海水族館</strong></a>（含午餐，自由參觀 2–2.5 小時）<span class="emo-time"> 🍱</span></li>
+<li>📍 🌉 <strong>14:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=古宇利大橋" rel="noopener noreferrer" target="_blank"><strong>古宇利大橋</strong></a>（停留 30–40 分）<span class="emo-time"> ☀️</span></li>
+<li>📍 🎡 <strong>18:00</strong> 回到那覇／美國村解散<span class="emo-time"> 🌆</span></li>
+</ul>
+</details>
+<div class="hero"><img alt="Okinawa Churaumi Aquarium entrance" decoding="async" loading="lazy" src="okinawa-churaumi-aquarium-entrance.jpg"/></div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.69417,127.87833" rel="noopener noreferrer" target="_blank">沖繩美麗海水族館 地圖</a></div>
+<div class="hero"><img alt="Kouri Bridge" decoding="async" loading="lazy" src="kouri-bridge.jpg"/></div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.69111,128.01056" rel="noopener noreferrer" target="_blank">古宇利大橋 地圖</a></div>
+<h3>🗺️ 路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(40,80)">
+<line stroke="#0ea5e9" stroke-width="6" x1="0" x2="220" y1="0" y2="0"></line>
+<line stroke="#0ea5e9" stroke-dasharray="6 6" stroke-width="6" x1="220" x2="480" y1="0" y2="0"></line>
+<line stroke="#0ea5e9" stroke-width="6" x1="480" x2="740" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="220" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="480" cy="0" fill="#0ea5e9" r="12"></circle><circle cx="740" cy="0" fill="#0ea5e9" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">出發</text><text fill="#0f172a" font-size="14" x="180" y="-20">萬座毛</text><text fill="#0f172a" font-size="14" x="440" y="-20">美麗海</text><text fill="#0f172a" font-size="14" x="700" y="-20">古宇利</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>建議預約觀光巴士（如 Hip Hop Bus），行程含<strong>萬座毛→美麗海→古宇利</strong>，時間掌控穩定；自行搭乘者可查 111/117 或<strong>山原急行巴士</strong>，需預留轉乘與步行。</div>
+</section>
+<section class="card" id="d4">
+<div class="section-title"><span class="day">Day 4（8/24）</span><h2>🏯 首里城 → 玉泉洞（Okinawa World）→ 瀨長島</h2></div>
+<div class="hero">
+<img alt="Shuri Castle" decoding="async" loading="lazy" src="shuri-castle.jpg"/>
+</div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.21722,127.71917" rel="noopener noreferrer" target="_blank">首里城 地圖</a></div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>🕒 時間軸 Timeline</h3>
+<ul class="timeline">
+<li>✈️ 🧳 📍 🚈 <strong>09:00</strong> 單軌至 <a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=首里駅" rel="noopener noreferrer" target="_blank"><strong>首里站</strong></a>（那覇市區出發約 20–25 分），步行至首里城公園<span class="emo-time"> 🥐</span></li>
+<li>📍 🏯 <strong>09:30–11:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=首里城公園" rel="noopener noreferrer" target="_blank"><strong>首里城公園</strong></a>（園區漫遊 1.5–2 小時）<span class="emo-time"> 🥐</span></li>
+<li>🚌 🧭 📍 🚌 <strong>12:30–15:00</strong> 巴士/計程車前往 <a href="https://www.google.com/maps/search/?api=1&amp;query=おきなわワールド" rel="noopener noreferrer" target="_blank"><strong>Okinawa World（玉泉洞）</strong></a>（建議 2–2.5 小時）<span class="emo-time"> 🍱</span></li>
+<li>✈️ 🧳 📍 🏝️ <strong>16:30–19:00</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=瀬長島ウミカジテラス" rel="noopener noreferrer" target="_blank"><strong>瀨長島 Umikaji Terrace</strong></a>（晚餐＋看飛機）<span class="emo-time"> ☀️</span></li>
+</ul>
+<div class="fig">
+<div>
+<h3>🍽️ 美食推薦</h3>
+<ul>
+<li><strong>首里周邊食堂</strong>：沖繩麵、三枚肉、豆腐料理；¥700–¥1,200。</li>
+<li><strong>Umikaji Terrace</strong>：咖啡、甜品、簡餐；海景一流；¥800–¥1,500。</li>
+</ul>
+</div>
+<div>
+<img alt="Umikaji Terrace, Senagajima" decoding="async" loading="lazy" src="umikaji-terrace-senagajima.jpg" style="width:100%;display:block;border:1px solid var(--border);border-radius:12px"/>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.17778,127.64694" rel="noopener noreferrer" target="_blank">瀨長島 Umikaji Terrace 地圖</a></div>
+</div>
+</div>
+</details>
+<div class="hero"><img alt="Gyokusendo Cave (Okinawa World)" decoding="async" loading="lazy" src="gyokusendo-cave-okinawa-world.jpg"/></div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.15083,127.73889" rel="noopener noreferrer" target="_blank">玉泉洞（Okinawa World） 地圖</a></div>
+<h3>🗺️ 路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 160">
+<rect fill="#f1f5f9" height="160" width="900"></rect>
+<g transform="translate(60,50)">
+<line stroke="#16a34a" stroke-dasharray="6 6" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#16a34a" r="12"></circle><circle cx="260" cy="0" fill="#16a34a" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">那覇</text><text fill="#0f172a" font-size="14" x="240" y="-20">首里城</text>
+</g>
+<g transform="translate(360,110)">
+<line stroke="#f59e0b" stroke-width="6" x1="0" x2="220" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#f59e0b" r="12"></circle><circle cx="220" cy="0" fill="#f59e0b" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">首里</text><text fill="#0f172a" font-size="14" x="200" y="-20">玉泉洞</text>
+</g>
+<g transform="translate(640,50)">
+<line stroke="#2563eb" stroke-dasharray="8 6" stroke-width="6" x1="0" x2="200" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="200" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">玉泉洞</text><text fill="#0f172a" font-size="14" x="180" y="-20">瀨長島</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>上午搭單軌至<a class="station" href="https://www.google.com/maps/search/?api=1&amp;query=首里駅" rel="noopener noreferrer" target="_blank"><strong>首里站</strong></a>步行入園；之後轉巴士/計程車至<strong>Okinawa World（玉泉洞）</strong>；黃昏再往<strong>瀨長島</strong>，留意末班車時刻或視情況回那覇轉乘。</div>
+</section>
+<section class="card" id="d5">
+<div class="section-title"><span class="day">Day 5（8/25）</span><h2>🛍️ 最後採購 → 那霸機場返港 ✈️</h2></div>
+<div class="hero">
+<img alt="Makishi Public Market interior" decoding="async" loading="lazy" src="makishi-public-market-interior.jpg"/>
+</div>
+<div class="caption"><a href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank">第一牧志公設市場 地圖</a></div>
+<details open="">
+<summary>展開／收起</summary>
+<h3>🕒 時間軸 Timeline</h3>
+<ul class="timeline">
+<li>📍 🛍️ <strong>09:00–10:30</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank"><strong>第一牧志公設市場</strong></a> 採購手信／早餐小吃<span class="emo-time"> 🥐</span></li>
+<li>✈️ 🧳 📍 ✈️ <strong>11:00</strong> 返回酒店取行李 → 單軌至<a href="https://www.google.com/maps/search/?api=1&amp;query=26.20694,127.64639" rel="noopener noreferrer" target="_blank"><strong>那覇空港</strong></a>（車程 20–25 分）<span class="emo-time"> 🍱</span></li>
+<li>✈️ 🧳 📍 ✈️ <strong>起飛前 2 小時</strong> 抵達機場辦理登機、安全檢查</li>
+</ul>
+</details>
+<h3>🗺️ 路線指示 / 地圖</h3>
+<div class="hero">
+<svg style="width:100%;display:block" viewbox="0 0 900 120">
+<rect fill="#f1f5f9" height="120" width="900"></rect>
+<g transform="translate(80,60)">
+<line stroke="#334155" stroke-dasharray="6 6" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#334155" r="12"></circle><circle cx="260" cy="0" fill="#334155" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">牧志市場</text><text fill="#0f172a" font-size="14" x="240" y="-20">酒店</text>
+</g>
+<g transform="translate(420,60)">
+<line stroke="#2563eb" stroke-width="6" x1="0" x2="260" y1="0" y2="0"></line>
+<circle cx="0" cy="0" fill="#2563eb" r="12"></circle><circle cx="260" cy="0" fill="#2563eb" r="12"></circle>
+<text fill="#0f172a" font-size="14" x="-10" y="-20">單軌</text><text fill="#0f172a" font-size="14" x="220" y="-20">機場</text>
+</g>
+</svg>
+</div>
+<div class="alert"><strong>交通換乘提示卡</strong><br/>從<strong>牧志公設市場</strong>返酒店取行李，搭單軌至<strong>那覇空港</strong>；高峰期安檢較慢，請預留 2 小時以上。</div>
+</section>
+<section class="card" id="poi"><div class="section-title"><span class="day">POI</span><h2>📍 景點列表（全頁）</h2></div><div class="kv">可於下方搜尋地點名稱；點擊直接開啟 Google 地圖。</div><ul class="timeline"><li>📍 🐚 <a href="https://www.google.com/maps/search/?api=1&amp;query=おきなわワールド" rel="noopener noreferrer" target="_blank">Okinawa World（玉泉洞）</a></li><li>📍 🏖️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.32194,127.75556" rel="noopener noreferrer" target="_blank">Sunset Beach（北谷）</a></li><li>📍 🎡 <a href="https://www.google.com/maps/search/?api=1&amp;query=北谷美浜アメリカンビレッジ" rel="noopener noreferrer" target="_blank">北谷・美濱美國村</a></li><li>📍 🌉 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.69111,128.01056" rel="noopener noreferrer" target="_blank">古宇利大橋</a></li><li>📍 🛍️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21556,127.68333" rel="noopener noreferrer" target="_blank">國際通</a></li><li>📍 🛍️ <a href="https://www.google.com/maps/search/?api=1&amp;query=國際通屋台村" rel="noopener noreferrer" target="_blank">屋台村</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=旭橋駅" rel="noopener noreferrer" target="_blank">旭橋站</a></li><li>✈️ 🧳 📍 ✈️ <a href="https://www.google.com/maps/search/?api=1&amp;query=那覇空港駅" rel="noopener noreferrer" target="_blank">機場站</a></li><li>📍 🐠 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.69417,127.87833" rel="noopener noreferrer" target="_blank">沖繩美麗海水族館</a></li><li>📍 ⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.22056,127.67528" rel="noopener noreferrer" target="_blank">波上宮</a></li><li>📍 🏖️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.22111,127.67389" rel="noopener noreferrer" target="_blank">波之上海灘</a></li><li>📍 🏝️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.17778,127.64694" rel="noopener noreferrer" target="_blank">瀨長島 Umikaji Terrace</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=牧志駅" rel="noopener noreferrer" target="_blank">牧志</a></li><li>📍 🛍️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank">牧志公設市場</a></li><li>📍 🐚 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.15083,127.73889" rel="noopener noreferrer" target="_blank">玉泉洞（Okinawa World）</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=真栄田岬" rel="noopener noreferrer" target="_blank">真榮田岬</a></li><li>📍 🛍️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21583,127.68917" rel="noopener noreferrer" target="_blank">第一牧志公設市場</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=県庁前駅 沖縄" rel="noopener noreferrer" target="_blank">縣廳前</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=美栄橋駅" rel="noopener noreferrer" target="_blank">美榮橋</a></li><li>📍 🏞️ <a href="https://www.google.com/maps/search/?api=1&amp;query=万座毛" rel="noopener noreferrer" target="_blank">萬座毛</a></li><li>✈️ 🧳 📍 ✈️ <a href="https://www.google.com/maps/search/?api=1&amp;query=26.20694,127.64639" rel="noopener noreferrer" target="_blank">那覇空港（Naha Airport）</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=真栄田岬" rel="noopener noreferrer" target="_blank">集合點</a></li><li>📍 🤿 <a href="https://www.google.com/maps/search/?api=1&amp;query=青の洞窟" rel="noopener noreferrer" target="_blank">青之洞窟</a></li><li>📍 🏯 <a href="https://www.google.com/maps/search/?api=1&amp;query=26.21722,127.71917" rel="noopener noreferrer" target="_blank">首里城</a></li><li>📍 🏯 <a href="https://www.google.com/maps/search/?api=1&amp;query=首里城公園" rel="noopener noreferrer" target="_blank">首里城公園</a></li><li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=首里駅" rel="noopener noreferrer" target="_blank">首里站</a></li></ul></section><section class="card" id="restaurants"><div class="section-title"><span class="day">FOOD</span><h2>🍽️ 餐廳列表（分類）</h2></div><div class="kv">搜尋餐廳名稱；點擊可開啟 Google 地圖。</div><h3>🍨 甜品 / 冰品</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Seal+Ice+Cream+Okinawa" rel="noopener noreferrer" target="_blank">Blue Seal Ice Cream</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Hug+3+Do+Okinawa" rel="noopener noreferrer" target="_blank">Hug 3 Do</a></li></ul><h3>🍜 沖繩麵</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Hamaya+Okinawa" rel="noopener noreferrer" target="_blank">Hamaya</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=King+Eilly+Okinawa" rel="noopener noreferrer" target="_blank">King Eilly</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Kishimoto+Shokudo+Okinawa" rel="noopener noreferrer" target="_blank">Kishimoto Shokudo</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Uruku+Soba+Tomigusuku" rel="noopener noreferrer" target="_blank">Uruku Soba Tomigusuku</a></li></ul><h3>🍶 居酒屋 / 當地料理</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Asatoya+Okinawa" rel="noopener noreferrer" target="_blank">Asatoya Agu-buta Shabu</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Magic+Ocean+Okinawa" rel="noopener noreferrer" target="_blank">Magic Ocean</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Urizun+Okinawa" rel="noopener noreferrer" target="_blank">Urizun</a></li></ul><h3>🥩 燒肉 / 牛肉</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Nikukyu+Okinawa" rel="noopener noreferrer" target="_blank">Nikukyu</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Shabu+Shabu+NAKAMA+Okinawa" rel="noopener noreferrer" target="_blank">Shabu Shabu NAKAMA</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Yakiniku+Hormone+NAKAMA+Okinawa" rel="noopener noreferrer" target="_blank">Yakiniku Hormone NAKAMA</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Yakiniku+Restaurant+Roins+Kumoji" rel="noopener noreferrer" target="_blank">Yakiniku Restaurant Roins Kumoji</a></li></ul><h3>☕ 咖啡 / 飲品</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Banta+Cafe+Okinawa" rel="noopener noreferrer" target="_blank">Banta Café</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=KAIHOLOCAFE+Okinawa" rel="noopener noreferrer" target="_blank">KAIHOLOCAFE</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ocean%27s+Pizza+Okinawa" rel="noopener noreferrer" target="_blank">Ocean’s Pizza</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Transit+Cafe+Okinawa" rel="noopener noreferrer" target="_blank">Transit Cafe</a></li></ul><h3>🍣 壽司</h3><ul class="timeline"><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ichiba+Kaitenzushi+Awase+Okinawa" rel="noopener noreferrer" target="_blank">Ichiba Kaitenzushi Awase</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ryukyu+Sushi+Tsukiji+Aozora+Sandaime+Okinawa" rel="noopener noreferrer" target="_blank">Ryukyu Sushi Tsukiji Aozora Sandaime</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Waryu+Sushi+Shuna+Okinawa" rel="noopener noreferrer" target="_blank">Waryu Sushi Shuna</a></li><li>🍴 <a href="https://www.google.com/maps/search/?api=1&amp;query=Yoshihatchi+Okinawa" rel="noopener noreferrer" target="_blank">Yoshihatchi</a></li></ul></section><section class="card" id="tips">
+<h2>🧭 交通與票券／小貼士</h2>
+<ul>
+<li>市區單軌：班距約 4–10 分；郊區公車班距較疏，預留轉乘與步行。</li>
+<li>票券：單軌 1/2 日券、巴士周遊券；視行程密度選擇。</li>
+<li>夏季：高溫與紫外線強，補水、防曬、輕便雨具；留意颱風預報。</li>
+<li>海上活動：依教練指示；活動後 24 小時內避免搭機。</li>
+</ul>
+</section>
+<footer>© 2025 沖繩行程助手｜iPhone Safari 友善版（Blog 版，外部圖片預覽）</footer>
+</div>
+<script>
+  (function(){
+    const root=document.documentElement;
+    const setTheme=(t)=>{ if(!t){root.removeAttribute('data-theme');localStorage.removeItem('okitheme');return;} root.setAttribute('data-theme',t); localStorage.setItem('okitheme',t); };
+    const saved=localStorage.getItem('okitheme'); if(saved) setTheme(saved);
+    document.getElementById('lightBtn').onclick=()=>setTheme('light');
+    document.getElementById('darkBtn').onclick=()=>setTheme('dark');
+
+    const header=document.getElementById('topbar');
+    const applyHeaderH=()=>{ const h=header.getBoundingClientRect().height; root.style.setProperty('--headerH', h+'px'); };
+    applyHeaderH(); window.addEventListener('resize',applyHeaderH);
+
+    const btns=[...document.querySelectorAll('nav button[data-target]')];
+    const go=(id)=>{ const el=document.getElementById(id); if(!el) return;
+      const y=el.getBoundingClientRect().top + window.scrollY - (header.offsetHeight + 10);
+      window.scrollTo({top:y,behavior:'smooth'}); history.replaceState(null,'','#'+id);
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+    };
+    btns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target)));
+    if(location.hash){ const id=location.hash.replace('#',''); setTimeout(()=>go(id), 50); }
+
+    document.getElementById('expandAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+    document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+  })();
+  
+
+    // --- POI 搜尋過濾 ---
+    (function(){
+      const poiSec = document.getElementById('poi');
+      if(!poiSec) return;
+      // 建立輸入框
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.placeholder = '搜尋景點名稱…';
+      input.style.cssText = 'width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);margin:10px 0;';
+      poiSec.querySelector('.kv').appendChild(input);
+      const list = poiSec.querySelector('ul.timeline');
+      const items = Array.from(list.querySelectorAll('li'));
+      input.addEventListener('input', ()=>{
+        const q = input.value.trim().toLowerCase();
+        items.forEach(li=>{
+          const t = li.textContent.trim().toLowerCase();
+          li.style.display = t.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+    
+
+    // --- 餐廳列表搜尋過濾 ---
+    (function(){
+      const restSec = document.getElementById('restaurants');
+      if(!restSec) return;
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.placeholder = '搜尋餐廳名稱…';
+      input.style.cssText = 'width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);margin:10px 0;';
+      restSec.querySelector('.kv').appendChild(input);
+      const listItems = Array.from(restSec.querySelectorAll('ul.timeline li'));
+      input.addEventListener('input', ()=>{
+        const q = input.value.trim().toLowerCase();
+        listItems.forEach(li=>{
+          const t = li.textContent.trim().toLowerCase();
+          li.style.display = t.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+    
+
+  (function(){
+    const root=document.documentElement;
+    const header=document.getElementById('topbar');
+    const btns=[...document.querySelectorAll('nav button[data-target]')];
+
+    const setTheme=(t)=>{ if(!t){root.removeAttribute('data-theme');localStorage.removeItem('okitheme');return;} root.setAttribute('data-theme',t); localStorage.setItem('okitheme',t); };
+    const saved=localStorage.getItem('okitheme'); if(saved) setTheme(saved);
+
+    const go=(id)=>{ const el=document.getElementById(id); if(!el) return;
+      const y=el.getBoundingClientRect().top + window.scrollY - (header.offsetHeight + 10);
+      window.scrollTo({top:y,behavior:'smooth'}); history.replaceState(null,'','#'+id);
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+    };
+    btns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target)));
+
+    window.addEventListener('hashchange', ()=>{
+      const id=location.hash.replace('#','');
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+    });
+
+    const autoBtn=document.getElementById('autoBtn');
+    if(autoBtn){
+      autoBtn.addEventListener('click', ()=>{ setTheme(null); });
+      autoBtn.title = '跟隨系統（Auto）';
+    }
+  })();
+</script>
+</body>
+</html>
